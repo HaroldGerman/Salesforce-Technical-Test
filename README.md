@@ -1,4 +1,4 @@
-# Salesforce Engagement App 🚀
+# Salesforce Engagement App 
 
 Technical implementation for Acme Services Engagement Management. This project enables full-cycle management of customer engagements, from data modeling to automation.
 
@@ -14,7 +14,7 @@ Technical implementation for Acme Services Engagement Management. This project e
     * `Opportunity to Engagement Task`: Auto-creates a "Prepare proposal" task when an Opportunity enters "Negotiation/Review".
 6.  **Reporting:** Custom Report Type and "Engagement Pipeline" report with visualization.
 
-## 🧪 How to Test
+##  How to Test
 
 ### 1. LWC Component (Engagement Summary)
 * Open any Engagement record linked to an Opportunity.
@@ -32,6 +32,6 @@ Technical implementation for Acme Services Engagement Management. This project e
 * Open **"Engagement Pipeline"**.
 * Verify it shows Engagements grouped by Status with a Sum of Opportunity Amounts.
 
-## 📂 Project Structure
+## Project Structure
 * **LWC:** `force-app/main/default/lwc/engagementSummary`
 * **Apex:** `force-app/main/default/classes/EngagementController.cls`
