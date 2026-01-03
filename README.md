@@ -1,18 +1,37 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Engagement App 🚀
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Technical implementation for Acme Services Engagement Management. This project enables full-cycle management of customer engagements, from data modeling to automation.
 
-## How Do You Plan to Deploy Your Changes?
+## 🛠 Features Built
+1.  **Data Modeling:** Custom `Engagement__c` object with relationships to Account and Opportunity.
+2.  **User Interface:** Custom Lightning App and Engagement Record Page layout.
+3.  **Backend Logic (Apex):**
+    * `EngagementController.cls`: Handles SOQL queries and safe DML operations for tasks.
+4.  **Frontend (LWC):**
+    * `engagementSummary`: Displays real-time task/event counters and Opportunity Amount.
+    * Includes a "Quick Follow-Up Call" button that creates tasks via Apex to bypass UI API limitations.
+5.  **Automation (Flow):**
+    * `Opportunity to Engagement Task`: Auto-creates a "Prepare proposal" task when an Opportunity enters "Negotiation/Review".
+6.  **Reporting:** Custom Report Type and "Engagement Pipeline" report with visualization.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## 🧪 How to Test
 
-## Configure Your Salesforce DX Project
+### 1. LWC Component (Engagement Summary)
+* Open any Engagement record linked to an Opportunity.
+* Verify the "Opportunity Amount" is displayed.
+* Click **"Quick Follow-Up Call"**.
+* **Expected Result:** A success toast appears, and a new Task is created in the Activity timeline.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+### 2. Flow Automation
+* Go to an Opportunity linked to an Engagement.
+* Change Stage to **"Negotiation/Review"**.
+* **Expected Result:** Navigate to the linked Engagement; a new high-priority task "Prepare proposal" appears automatically.
 
-## Read All About It
+### 3. Reporting
+* Go to the **Reports** tab.
+* Open **"Engagement Pipeline"**.
+* Verify it shows Engagements grouped by Status with a Sum of Opportunity Amounts.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## 📂 Project Structure
+* **LWC:** `force-app/main/default/lwc/engagementSummary`
+* **Apex:** `force-app/main/default/classes/EngagementController.cls`
