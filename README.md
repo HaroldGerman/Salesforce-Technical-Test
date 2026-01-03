@@ -2,7 +2,7 @@
 
 Technical implementation for Acme Services Engagement Management. This project enables full-cycle management of customer engagements, from data modeling to automation.
 
-## 🛠 Features Built
+## Features Built
 1.  **Data Modeling:** Custom `Engagement__c` object with relationships to Account and Opportunity.
 2.  **User Interface:** Custom Lightning App and Engagement Record Page layout.
 3.  **Backend Logic (Apex):**
